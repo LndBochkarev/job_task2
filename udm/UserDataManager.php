@@ -31,6 +31,7 @@ class UserDataManager {
 
     /**
      * @param int $userId
+     * @throws PDOException
      */
     private function __construct() {
         $this->delimiter = '\\';
@@ -41,6 +42,8 @@ class UserDataManager {
     /**
      * @param int $userId
      * @return UserDataManager instance
+     * @throws PDOException
+     * @throws Exception
      */
     public static function getInstance($userId) {
 
@@ -58,6 +61,8 @@ class UserDataManager {
      * Get data from $storage array specified by path
      * @param string $path
      * @return mixed $data
+     * @throws PDOException
+     * @throws Exception
      */
     public function get($path) {
 
@@ -72,6 +77,8 @@ class UserDataManager {
      * Set data in $storage array specified by path and update storage in database
      * @param string $path
      * @param mixed $data
+     * @throws PDOException
+     * @throws Exception
      */
     public function set($path, $data) {
 
